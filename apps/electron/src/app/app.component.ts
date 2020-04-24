@@ -1,27 +1,22 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-import { PropertyService } from './core/services/property.service';
-import { StyleTreeNode } from '@win-teardown/models';
+import { TreeNode } from '@win-teardown/models';
+import { first } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  tree: any[] = [];
-
-  constructor(private propertyService: PropertyService) {}
-
   ngOnInit() {
-    const x = new StyleTreeNode('asdf');
-    x.addChild(new StyleTreeNode('fdsa'));
+    const node1 = new TreeNode('node1');
+    const node2 = new TreeNode('node2');
+    node1.addChild(node2);
 
-    this.tree.push(x);
-  }
+    const matchingNode$ = node2.ancestors$.pipe(first((node: TreeNode) => node.name === 'node1'));
 
-  doSomething$(node: StyleTreeNode) {
-    return this.propertyService.doSomething$(node);
+    combineLatest([matchingNode$]).subscribe((result) => console.log('Success!', result));
   }
 }

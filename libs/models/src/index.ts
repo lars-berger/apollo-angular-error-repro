@@ -1,1 +1,1 @@
-export { StyleTreeNode, NodeType } from './style-tree-node';
+export { TreeNode } from './tree-node';
