@@ -8,7 +8,10 @@ import { ApolloModule } from 'apollo-angular';
 
 @NgModule({
   declarations: [],
+  /** Import that works fine: */
   // imports: [CommonModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
+
+  /** Import that throws error: */
   imports: [CommonModule, FormsModule, HttpClientModule, BrowserAnimationsModule, ApolloModule, HttpLinkModule],
 })
 export class CoreModule {}

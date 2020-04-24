@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-
-import { TreeNode } from '@win-teardown/models';
+import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
+
+import { TreeNode } from '@win-teardown/models';
 
 @Component({
   selector: 'app-root',
