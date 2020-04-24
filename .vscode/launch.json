@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Electron: Main",
+      "protocol": "inspector",
+      // Prelaunch task compiles main.ts for Electron & starts Angular dev server.
+      "preLaunchTask": "Build: All",
+      "cwd": "${workspaceFolder}/apps/electron",
+      "runtimeExecutable": "${workspaceFolder}/apps/electron/node_modules/.bin/electron",
+      "runtimeArgs": ["--remote-debugging-port=9223", "--serve", "."],
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/apps/electron/node_modules/.bin/electron.cmd"
+      },
+      "env": {
+        "ELECTRON_DISABLE_SECURITY_WARNINGS": "true",
+        "ELECTRON_IS_DEV": "1"
+      }
+    },
+    {
+      "name": "Electron: Renderer",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9223,
+      "webRoot": "${workspaceFolder}/apps/electron",
+      "timeout": 30000,
+      "urlFilter": "http://localhost:4200/*",
+      // Source map overrides are copied from Angular CLI debugging recipe.
+      // See: https://github.com/Microsoft/vscode-recipes/tree/master/Angular-CLI
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*"
+      }
+      // Might be needed in the future for debugging tests:
+      // "pathMapping": {
+      //   "/_karma_webpack_": "${workspaceFolder}/apps/electron"
+      // }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Electron: All",
+      // The main process should be started before renderer to prevent timeout.
+      "configurations": ["Electron: Main", "Electron: Renderer"]
+    }
+  ]
+}

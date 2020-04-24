@@ -1,0 +1,11 @@
+{
+  "name": "win-teardown-models",
+  "version": "1.0.0",
+  "scripts": {},
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "~8.9.4",
+    "rxjs": "6.5.5"
+  }
+}

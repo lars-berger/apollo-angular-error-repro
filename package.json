@@ -1,0 +1,25 @@
+{
+  "name": "win-teardown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {},
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "libs/*"
+    ],
+    "nohoist": [
+      "**/electron",
+      "**/electron/**",
+      "**/@angular*",
+      "**/@angular*/**"
+    ]
+  }
+}

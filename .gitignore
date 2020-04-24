@@ -1,0 +1,29 @@
+# Compiled output
+/**/dist
+/**/build
+/tmp
+/out-tsc
+/app-builds
+/release
+/**/*.js
+*.js.map
+!jest.config.js
+!/**/jest.config.js
+!/**/karma.conf.js
+!/**/angular.webpack.js
+!/**/extra-webpack.config.js
+!/**/postinstall-web.js
+!/**/postinstall.config.js
+!/**/postinstall.js
+
+# Dependencies
+/node_modules
+/**/node_modules
+
+# Misc
+*.log
+.vscode/c_cpp_properties.json
+
+# System Files
+.DS_Store
+Thumbs.db

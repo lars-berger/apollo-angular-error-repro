@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build: All",
+      "type": "shell",
+      "command": "npm run electron:serve-tsc && ng serve",
+      "isBackground": true,
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": ["relative", "${cwd}"],
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*",
+          "endsPattern": "^.*Compiled successfully.*"
+        }
+      },
+      "options": {
+        "cwd": "${workspaceRoot}/apps/electron"
+      }
+    },
+    {
+      "label": "Build: Angular",
+      "type": "npm",
+      "script": "ng:serve",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": ["relative", "${cwd}"],
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*Angular Live Development Server.*",
+          "endsPattern": "^.*Compiled successfully.*"
+        }
+      },
+      "options": {
+        "cwd": "${workspaceRoot}/apps/electron"
+      }
+    },
+    {
+      "label": "Build: Electron",
+      "type": "npm",
+      "script": "electron:serve-tsc",
+      "group": "build",
+      "problemMatcher": ["$tsc"],
+      "options": {
+        "cwd": "${workspaceRoot}/apps/electron"
+      }
+    }
+  ]
+}
