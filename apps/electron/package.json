@@ -52,6 +52,7 @@
     "@types/node": "12.11.1",
     "@typescript-eslint/eslint-plugin": "2.20.0",
     "@typescript-eslint/parser": "2.20.0",
+    "@win-teardown/models": "*",
     "apollo-angular": "1.9.1",
     "apollo-angular-link-http": "1.10.0",
     "apollo-cache-inmemory": "1.6.5",

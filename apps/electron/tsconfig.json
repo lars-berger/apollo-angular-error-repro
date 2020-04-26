@@ -17,8 +17,7 @@
     "lib": ["es2017", "es2016", "es2015", "dom"],
     "paths": {
       "@/*": ["app/*"],
-      "@env/*": ["environments/*"],
-      "@win-teardown/models": ["../../../libs/models/src/index"]
+      "@env/*": ["environments/*"]
     }
   },
   "include": ["main.ts", "src/**/*"],
