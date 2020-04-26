@@ -1,11 +1,17 @@
 {
-  "name": "win-teardown-models",
+  "name": "@win-teardown/models",
   "version": "1.0.0",
-  "scripts": {},
   "private": true,
-  "dependencies": {},
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "rxjs": "6.5.5",
+    "tslib": "1.11.1"
+  },
   "devDependencies": {
     "@types/node": "~8.9.4",
-    "rxjs": "6.5.5"
+    "typescript": "3.7.5"
   }
 }
