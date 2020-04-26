@@ -17,6 +17,7 @@ export class AppComponent {
 
     const matchingNode$ = node2.ancestors$.pipe(first((node: TreeNode) => node.name === 'node1'));
 
+    // The combineLatest here throws an error.
     combineLatest([matchingNode$]).subscribe((result) => console.log('Success!', result));
   }
 }
