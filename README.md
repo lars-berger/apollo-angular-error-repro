@@ -1,9 +1,9 @@
 To start the application:
 
 ```
-yarn install
+yarn install (in root directory)
 cd libs/models
 yarn run build
-cd apps/electron
+cd ../../apps/electron
 yarn run start
 ```
