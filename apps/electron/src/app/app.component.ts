@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 
-import { TreeNode } from '@win-teardown/models';
+import { TreeNode, simpleExportedObservable$ } from '@win-teardown/models';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { TreeNode } from '@win-teardown/models';
 })
 export class AppComponent {
   ngOnInit() {
+    /******** Example 1: original reproduction of error ********/
     const node1 = new TreeNode('node1');
     const node2 = new TreeNode('node2');
     node1.addChild(node2);
@@ -19,5 +20,9 @@ export class AppComponent {
 
     // The combineLatest here throws an error.
     combineLatest([matchingNode$]).subscribe((result) => console.log('Success!', result));
+
+    /******** Example 2: simplified reproduction of error ********/
+    // The combineLatest here also throws an error.
+    combineLatest([simpleExportedObservable$]).subscribe((result) => console.log('Success!', result));
   }
 }
