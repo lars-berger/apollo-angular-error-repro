@@ -1,5 +1,5 @@
 {
-  "name": "@win-teardown/models",
+  "name": "@my-app/models",
   "version": "1.0.0",
   "private": true,
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "rxjs": "6.5.5",
-    "tslib": "1.11.1"
+    "tslib": "1.10.0"
   },
   "devDependencies": {
     "@types/node": "~8.9.4",

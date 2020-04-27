@@ -1,5 +1,5 @@
 {
-  "name": "win-teardown-electron",
+  "name": "@my-app/electron",
   "version": "1.0.0",
   "main": "main.js",
   "private": true,
@@ -45,7 +45,7 @@
     "@types/node": "12.11.1",
     "@typescript-eslint/eslint-plugin": "2.20.0",
     "@typescript-eslint/parser": "2.20.0",
-    "@win-teardown/models": "*",
+    "@my-app/models": "*",
     "apollo-angular": "1.9.1",
     "apollo-angular-link-http": "1.10.0",
     "apollo-cache-inmemory": "1.6.5",

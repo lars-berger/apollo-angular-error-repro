@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 
-import { TreeNode, simpleExportedObservable$ } from '@win-teardown/models';
+import { TreeNode, simpleExportedObservable$ } from '@my-app/models';
 
 @Component({
   selector: 'app-root',
